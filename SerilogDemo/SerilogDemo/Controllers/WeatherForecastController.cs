@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -35,5 +34,18 @@ namespace SerilogDemo.Controllers
                 })
                 .ToArray();
         }
+
+        [HttpPost]
+        public ActionResult<Product> Post(Product product)
+        {
+            var test = product;
+            return product;
+        }
+    }
+
+    public class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
